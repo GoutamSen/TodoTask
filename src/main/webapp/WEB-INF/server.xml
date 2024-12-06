@@ -1,0 +1,15 @@
+<Server port="8005" shutdown="SHUTDOWN"> <!-- Use a different port for shutdown -->
+    <Service name="Catalina">
+        <!-- HTTP Connector -->
+        <Connector port="8085" protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443" /> <!-- Different port for HTTPS redirection -->
+
+        <!-- AJP Connector -->
+        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" /> <!-- Different AJP port -->
+        
+        <Engine name="Catalina" defaultHost="localhost">
+            <!-- Your Host configurations go here -->
+        </Engine>
+    </Service>
+</Server>
